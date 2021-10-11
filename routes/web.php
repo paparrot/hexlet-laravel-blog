@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\PageController;
+use \App\Http\Controllers\ArticleController;
+use \App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +15,8 @@ use \App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
-Route::get("/about", [PageController::class, 'about']);
+Route::get("/about", [PageController::class, 'about'])->name('page.about');
+
+Route::get("/articles", [ArticleController::class, 'index'])->name('article.index');

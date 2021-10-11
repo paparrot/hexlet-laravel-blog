@@ -10,6 +10,21 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
+<header>
+    <nav>
+        <ul>
+            <li>
+                <a href="{{route("home.index")}}">Главная</a>
+            </li>
+            <li>
+                <a href="{{route("page.about")}}">О блоге</a>
+            </li>
+            <li>
+                <a href="{{route("article.index")}}">Статьи</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 <div class="container mt-4">
     <h1>@yield('header')</h1>
     <div>
