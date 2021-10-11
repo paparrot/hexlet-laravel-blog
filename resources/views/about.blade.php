@@ -1,9 +1,12 @@
 @extends('layouts.app')
-
-@section('title', 'О блоге')
-
 @section('header','О блоге')
-
 @section('content')
-    <p>Эксперименты с Laravel на Хекслете</p>
+<ul>
+@foreach($articles as $article)
+    <li>
+        <h2>{{$article['name']}}</h2>
+        <p>{{$article['body']}}</p>
+    </li>
+@endforeach
+</ul>
 @endsection
