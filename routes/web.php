@@ -25,6 +25,8 @@ Route::get('/articles/create', [ArticleController::class, 'create'])->name('arti
 
 Route::post('/articles', [ArticleController::class, 'store'])->name('article.store');
 
+Route::delete('/articles/{id}', [ArticleController::class, 'delete'])->name('article.delete');
+
 Route::get('/articles/{id}', [ArticleController::class, 'show'])->name('article.show');
 
 Route::get('/articles/{id}/edit', [ArticleController::class, 'edit'])->name('article.edit');
