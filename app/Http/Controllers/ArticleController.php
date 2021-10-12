@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Article;
 class ArticleController extends Controller
 {
-    public function index()
+    public function index(Request $req)
     {
-        $articles = Article::paginate();
-        return view('article.index', compact('articles'));
+        $searchString = $req->input('article', '');
+        $articles = Article::where('name', 'like', "$searchString%")->paginate();
+        return view('article.index', compact('articles', 'searchString'));
     }
 
     public function show($id)
